@@ -1,0 +1,13 @@
+<section class='home'>
+    <h2 class="home__title">Home</h2>
+    <div class="home__form">
+        <div class="home__form-group">
+            <label>{{data.fromModel}}</label>
+            <input class="home__form-control" name="fromModel" [ngModel]="data.fromModel" />
+        </div>
+        <div class="home__form-group">
+            <label>{{data.fromToModel}}</label>
+            <input class="home__form-control" name="fromToModel" [(ngModel)]="data.fromToModel" />
+        </div>
+    </div>
+</section>
