@@ -1,13 +1,24 @@
-<section class='home'>
+<section class='container'>
     <h2 class="home__title">Home</h2>
-    <div class="home__form">
-        <div class="home__form-group">
-            <label>{{data.fromModel}}</label>
-            <input class="home__form-control" name="fromModel" [ngModel]="data.fromModel" />
+    <div class="row home__form" style="margin-bottom: 150px;">
+        <div class="col home__form-group">
+            <label style="margin-right: 16px;">{{dataLink.fromModel}}</label>
+            <input class="home__form-control" name="fromModel" [ngModel]="dataLink.fromModel" />
         </div>
-        <div class="home__form-group">
-            <label>{{data.fromToModel}}</label>
-            <input class="home__form-control" name="fromToModel" [(ngModel)]="data.fromToModel" />
+        <div class="col home__form-group">
+            <label style="margin-right: 16px;">{{dataLink.fromToModel}}</label>
+            <input class="home__form-control" name="fromToModel" [(ngModel)]="dataLink.fromToModel" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group">
+            <mat-form-field appearance="fill">
+                <mat-label>Выберите ед.измерения</mat-label>
+                <mat-select [(value)]="selectedUnit">
+                    <mat-option *ngFor="let unit of unitList" [value]="unit">{{unit}}</mat-option>
+                </mat-select>
+                <mat-hint>{{selectedUnit | unitFormat}}</mat-hint>
+            </mat-form-field>
         </div>
     </div>
 </section>

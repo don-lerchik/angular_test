@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {FormControl} from '@angular/forms';
 import { FormData } from '../../mock';
 
 @Component({
@@ -7,11 +8,12 @@ import { FormData } from '../../mock';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  data: FormData = {
+  dataLink: FormData = {
     fromModel: 'одностороняя',
     fromToModel: 'двустороняя',
   };
-
+  selectedUnit = '';
+  unitList: string[] = ['килограмм', 'грамм', 'метр', 'километр', 'сантимерт', 'милиметр'];
   constructor() { }
 
   ngOnInit(): void {
